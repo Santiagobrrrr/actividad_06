@@ -16,16 +16,46 @@ def enter_numbers():
 
         case "2":
             sum_user = 0
-            count_prom = 0
 
             for i in range(how_numbers):
                 numbers_user = float(input(f"Ingrese su número: "))
                 sum_user += numbers_user
-                count_prom += 1
-            print(f"El promedio es de {sum_user/count_prom}\n")
+            print(f"El promedio es de {sum_user/how_numbers}\n")
+
+        case "3":
+            count_positive = 0
+            count_negative = 0
+            for i in range(how_numbers):
+                if i > 0:
+                    count_positive += 1
+                if i < 0:
+                    count_negative += 1
+            print(f"Cantidad de positivos es de {count_positive}\n"
+                  f"Cantidad de negativos es de {count_negative}\n")
 
         case _:
             print(f"VALOR INVÁLIDO")
+
+def area_triangle():
+    l1 = int(input("Ingrese la longitud de la base: "))
+    l2 = int(input("Ingrese la longitud de la altura: "))
+    return print(f"El área del triángulo es de {(l1 * l2) / 2} unidades^2\n")
+
+def even_or_odd():
+    user_number = float(input(f"Ingrese un número: "))
+    if user_number % 2 == 0:
+        print(f"El numero {user_number} es par\n")
+    else:
+        print(f"El numero {user_number} es impar\n")
+
+def avg_qualification():
+    sum_qualification = 0
+    count = 0
+    qualification_number = int(input("Ingrese la cantidad de calificaciones a ingresar: "))
+    for i in range(qualification_number):
+        number_qualification = float(input(f"Ingrese la calificación {i + 1}: "))
+        sum_qualification += number_qualification
+    return print(f"El promedio de las {qualification_number} es de {sum_qualification/qualification_number}\n")
 
 while True:
     print(f"MENÚ")
@@ -44,12 +74,15 @@ while True:
 
         case "2":
             print(f"Calcular área del triángulo")
+            area_triangle()
 
         case "3":
             print(f"Verificación de numeros (par o impar)")
+            even_or_odd()
 
         case "4":
             print(f"Promedio de calificaciones")
+            avg_qualification()
 
         case "5":
             print(f"Verificación de numero mayor o menor")
