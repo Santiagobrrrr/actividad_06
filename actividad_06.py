@@ -50,12 +50,26 @@ def even_or_odd():
 
 def avg_qualification():
     sum_qualification = 0
-    count = 0
     qualification_number = int(input("Ingrese la cantidad de calificaciones a ingresar: "))
     for i in range(qualification_number):
         number_qualification = float(input(f"Ingrese la calificación {i + 1}: "))
         sum_qualification += number_qualification
     return print(f"El promedio de las {qualification_number} es de {sum_qualification/qualification_number}\n")
+
+def greater_and_less():
+    how_numbers = int(input("¿Cuántos números desea ingresar?: "))
+    number_user = float(input(f"Ingrese el numero 1: "))
+    number_user_greater = number_user
+    number_user_less = number_user
+    for i in range(1,how_numbers):
+        number_user = float(input(f"Ingrese el numero {i + 1}: "))
+        if number_user > number_user_less:
+            number_user_greater = number_user
+        elif number_user < number_user_less:
+            number_user_less = number_user
+    print(f"El numero mas grande es {number_user_greater}")
+    print(f"El numero menor es {number_user_less}\n")
+
 
 while True:
     print(f"MENÚ")
@@ -63,7 +77,7 @@ while True:
     print(f"2. CALCULAR ÁREA DEL TRIÁNGULO")
     print(f"3. VERIFICACIÓN DE PAR O IMPAR")
     print(f"4. PROMEDIO DE CALIFICACIONES")
-    print(f"5. VERIFICACIÓN DE NUMERO MAYOR O MENOR DE LISTA")
+    print(f"5. VERIFICACIÓN DE NUMERO MAYOR Y MENOR")
     print(f"6. SALIR")
 
     option_user = input(f"Ingrese una de las opciones (1-6): ")
@@ -86,6 +100,7 @@ while True:
 
         case "5":
             print(f"Verificación de numero mayor o menor")
+            greater_and_less()
 
         case "6":
             print(f"Ha salido del programa, nos vemos...")
