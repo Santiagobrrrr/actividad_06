@@ -12,7 +12,18 @@ def enter_numbers():
             for i in range(how_numbers):
                 numbers_user = float(input(f"Ingrese su número: "))
                 sum_user += numbers_user
-            print(f"La suma es de {sum_user}")
+            print(f"La suma es de {sum_user}\n")
+
+        case "2":
+            sum_user = 0
+            count_prom = 0
+
+            for i in range(how_numbers):
+                numbers_user = float(input(f"Ingrese su número: "))
+                sum_user += numbers_user
+                count_prom += 1
+            print(f"El promedio es de {sum_user/count_prom}\n")
+
         case _:
             print(f"VALOR INVÁLIDO")
 
