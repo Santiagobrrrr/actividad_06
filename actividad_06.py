@@ -1,3 +1,21 @@
+def enter_numbers():
+    how_numbers = int(input("¿Cuántos números desea ingresar?: "))
+    print(f"¿Qué opción desea ingresar?")
+    print(f"1. Sumar")
+    print(f"2. Promedio")
+    print(f"3. Cantidad de Positivos o Negativos")
+    option_do = input(f"Ingrese la opción a realizar: ")
+
+    match option_do:
+        case "1":
+            sum_user = 0
+            for i in range(how_numbers):
+                numbers_user = float(input(f"Ingrese su número: "))
+                sum_user += numbers_user
+            print(f"La suma es de {sum_user}")
+        case _:
+            print(f"VALOR INVÁLIDO")
+
 while True:
     print(f"MENÚ")
     print(f"1. SUMA - PROMEDIO - POSTITIVO O NEGATIVO")
@@ -11,7 +29,7 @@ while True:
 
     match option_user:
         case "1":
-            print(f"Ingrese una de las opciones disponibles: ")
+            enter_numbers()
 
         case "2":
             print(f"Calcular área del triángulo")
